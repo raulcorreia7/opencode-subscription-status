@@ -1,0 +1,14 @@
+{
+  "fiveHour": {
+    "usedPercent": 80,
+    "windowMinutes": 300,
+    "resetsAt": 1740766800
+  },
+  "weekly": {
+    "usedPercent": 65,
+    "windowMinutes": 10080,
+    "resetsAt": 1741285200
+  },
+  "model": "gpt-5.3-codex",
+  "account": "user-abc123"
+}

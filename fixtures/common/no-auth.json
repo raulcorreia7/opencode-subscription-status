@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "NO_AUTH",
+    "message": "No authentication found"
+  }
+}

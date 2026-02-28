@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "API_ERROR",
+    "message": "API request failed with status 429",
+    "status": 429
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "TOKEN_EXPIRED",
+    "message": "Authentication token has expired"
+  }
+}
