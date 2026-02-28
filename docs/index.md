@@ -4,17 +4,46 @@ Welcome to the OpenCode Subscription Status Plugin documentation.
 
 ## Quick Links
 
-| Document                          | Description                  |
-| --------------------------------- | ---------------------------- |
-| [README](../README.md)            | Installation and quick start |
-| [API Reference](./API.md)         | Complete API documentation   |
-| [Architecture](./ARCHITECTURE.md) | System design and components |
-| [Privacy Policy](./PRIVACY.md)    | Data handling and privacy    |
+| Document                                | Description                                |
+| --------------------------------------- | ------------------------------------------ |
+| [README](../README.md)                  | Quick start and overview                   |
+| [Installation Guide](./INSTALLATION.md) | Install via npm, local plugin, or npm link |
+| [Development Guide](./DEVELOPMENT.md)   | Build, test, and contribute                |
+| [API Reference](./API.md)               | Complete API documentation                 |
+| [Architecture](./ARCHITECTURE.md)       | System design and components               |
+| [Privacy Policy](./PRIVACY.md)          | Data handling and privacy                  |
 
-## Getting Started
+## Installation
 
-1. **Install**: `npm install opencode-subscription-status`
-2. **Configure**: Add to `opencode.json`
+### From npm (Recommended)
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-subscription-status"]
+}
+```
+
+### For Local Development
+
+```bash
+# Build the plugin
+git clone https://github.com/raulcorreia7/opencode-subscription-status.git
+cd opencode-subscription-status
+npm install
+npm run build
+
+# Link globally
+mkdir -p ~/.config/opencode/plugins
+ln -s $(pwd)/dist ~/.config/opencode/plugins/subscription-status
+```
+
+See [Installation Guide](./INSTALLATION.md) for all methods.
+
+## Quick Start
+
+1. **Install**: Add to `opencode.json`
+2. **Authenticate**: Run `opencode auth login`
 3. **Use**: Run `/status` in OpenCode
 
 ## Common Tasks
@@ -40,10 +69,10 @@ Welcome to the OpenCode Subscription Status Plugin documentation.
 ### Programmatic Access
 
 ```typescript
-import { subscriptionClient } from 'opencode-subscription-status'
+import { subscriptionClient } from "opencode-subscription-status"
 
 const snapshot = await subscriptionClient.getStatus({
-  providerId: 'chatgpt-codex',
+  providerId: "chatgpt-codex",
 })
 
 console.log(snapshot.windows[0]?.credit.percentage)
@@ -51,6 +80,8 @@ console.log(snapshot.windows[0]?.credit.percentage)
 
 ## Need Help?
 
-- Check the [API Reference](./API.md) for detailed method signatures
-- Review [Architecture](./ARCHITECTURE.md) to understand the system
-- Read [Privacy Policy](./PRIVACY.md) for data handling details
+- [Installation Guide](./INSTALLATION.md) - Setup instructions
+- [Development Guide](./DEVELOPMENT.md) - Build and contribute
+- [API Reference](./API.md) - Method signatures and types
+- [Architecture](./ARCHITECTURE.md) - System design
+- [Privacy Policy](./PRIVACY.md) - Data handling
